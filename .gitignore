@@ -4,3 +4,7 @@ test.txt
 test_1.txt
 argtest.py
 fake.docx
+test.html
+test_page.html
+__pycache__/
+*.pyc
