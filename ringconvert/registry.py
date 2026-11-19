@@ -1,3 +1,4 @@
+import json
 from ringconvert.readers import docx_reader
 from ringconvert.writers import txt_writer
 from ringconvert.readers import txt_reader
@@ -24,3 +25,12 @@ def get_writer(ext):
         return WRITERS[ext]
     else:
         raise ValueError(f"No writer found for {ext} files.")
+
+
+def get_targets(ext):
+    with open("config/formats.json", "r", encoding = "utf-8") as f:
+        data = json.load(f)
+        if ext in data:
+            return data[ext]
+        else:
+            return []
